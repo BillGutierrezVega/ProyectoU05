@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'versioned.apps.VersionedConfig',
+    'pagos.apps.PagosConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
