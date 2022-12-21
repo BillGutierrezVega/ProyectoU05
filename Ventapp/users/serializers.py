@@ -8,7 +8,7 @@ from users.models import User
 class RegistroSerializer(serializers.ModelSerializer):
     email = serializers.CharField(max_length=80)
     username = serializers.CharField(max_length=45)
-    password = serializers.CharField(max_length=8, write_only=True)
+    password = serializers.CharField(max_length=10, write_only=True)
     
     class Meta:
         model = User
@@ -25,7 +25,6 @@ class RegistroSerializer(serializers.ModelSerializer):
         user = super().create(validated_data)
         user.set_password(password)
         user.save()
-        
         Token.objects.create(user=user)
         
         return user
